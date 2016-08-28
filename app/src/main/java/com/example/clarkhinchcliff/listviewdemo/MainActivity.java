@@ -2,6 +2,9 @@ package com.example.clarkhinchcliff.listviewdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView myListView = (ListView) findViewById(R.id.myListView);
-        ArrayList<String> myFamily = new ArrayList<String>();
+        final ArrayList<String> myFamily = new ArrayList<String>();
 
         myFamily.add("Clark");
         myFamily.add("Gayle");
@@ -28,5 +31,14 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myFamily);
 
         myListView.setAdapter(arrayAdapter);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            private int position;
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("Name", myFamily.get(position));
+            }
+        });
     }
 }
