@@ -18,27 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView myListView = (ListView) findViewById(R.id.myListView);
-        final ArrayList<String> myFamily = new ArrayList<String>();
-
-        myFamily.add("Clark");
-        myFamily.add("Gayle");
-        myFamily.add("Grant");
-        myFamily.add("Trent");
-        myFamily.add("Brittany");
-        myFamily.add("Marissa");
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myFamily);
-
-        myListView.setAdapter(arrayAdapter);
-
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            private int position;
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("Name", myFamily.get(position));
-            }
-        });
+        
     }
 }
