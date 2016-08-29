@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         myListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), myFriends.get(position), 2000).show();
+                Toast.makeText(getApplicationContext(), myFriends.get(position), Toast.LENGTH_LONG).show();
             }
         });
     }
